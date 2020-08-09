@@ -65,7 +65,8 @@
             margin: 20px 0;
             padding: 0 40px;
             max-width: 200px;
-            font-size: 16px
+            font-size: 16px;
+            width: 100%
         }
 
         .ques-num {

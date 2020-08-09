@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Wrapper, OptionWrapper } from "./QuestonCard.styles";
+import {QuestionPropTypes} from './../Types/types'
 
-export const QuestionCard: React.FC<any> = ({
+export const QuestionCard: React.FC<QuestionPropTypes> = ({
   question,
-  options,
+  options, 
   callback,
 }) => {
   const [select, setSelect] = useState("");
@@ -19,7 +20,7 @@ export const QuestionCard: React.FC<any> = ({
       </div>
       <div>
         <form
-          onSubmit={(e) => {
+          onSubmit={(e: React.FormEvent<EventTarget>) => {
             callback(e, select);
           }}
         >
@@ -31,11 +32,14 @@ export const QuestionCard: React.FC<any> = ({
                     type="radio"
                     name="opt"
                     value={opt}
+                    required
                     onChange={onChangeHandler}
                     checked={select === opt}
                     className="input"
                   />
+                  <span>
                   {opt}
+                  </span>
                 </div>
               </OptionWrapper>
             );

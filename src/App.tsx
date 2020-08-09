@@ -51,7 +51,7 @@ function App() {
     <Wrapper>
       {showScore ? (
         <div className="score">
-          Your Score is {score} / 5
+          Your Score is {score} / {quiz.length}
           <br />
           <button
             onClick={() => {
@@ -67,7 +67,7 @@ function App() {
       ) : (
         <div>
           <h1>React Quiz</h1>
-          <p className="ques-num" >Question Number {currentStep + 1}/5  </p>
+          <p className="ques-num" >Question Number {currentStep + 1}/ {quiz.length}  </p>
           <QuestionCard
             question={quiz[currentStep].question}
             options={quiz[currentStep].options}
